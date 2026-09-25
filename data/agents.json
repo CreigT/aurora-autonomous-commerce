@@ -1,0 +1,58 @@
+{
+  "company": "Aurora Autonomous Commerce",
+  "status": "operational",
+  "updatedAt": "2026-09-25T16:00:00Z",
+  "layers": [
+    {
+      "name": "Executive",
+      "agents": [
+        { "id": "ceo", "name": "CEO Agent", "state": "watching", "note": "No irreversible commitments without policy." },
+        { "id": "coo", "name": "Chief Operations Agent", "state": "active", "note": "Storefront module is live." },
+        { "id": "strategy", "name": "Strategic Planning Agent", "state": "queued", "note": "Waiting on Day 2 demand signals." },
+        { "id": "governance", "name": "Governance Agent", "state": "active", "note": "Approval policy loaded." },
+        { "id": "ethics", "name": "Ethics & Compliance Agent", "state": "active", "note": "Paywall copy reviewed." },
+        { "id": "risk", "name": "Risk Management Agent", "state": "active", "note": "Demo-mode payments allowed." }
+      ]
+    },
+    {
+      "name": "Revenue",
+      "agents": [
+        { "id": "sales", "name": "Sales Agent", "state": "active", "note": "Catalog published." },
+        { "id": "marketing", "name": "Marketing Agent", "state": "standby", "note": "Needs Day 2 campaign module." },
+        { "id": "content", "name": "Content Creation Agent", "state": "active", "note": "Product pages written." },
+        { "id": "seo", "name": "SEO/AEO Agent", "state": "standby", "note": "Metadata present; backlog later." }
+      ]
+    },
+    {
+      "name": "Customer",
+      "agents": [
+        { "id": "support", "name": "Customer Support Agent", "state": "active", "note": "Mailto + FAQ live." },
+        { "id": "refund", "name": "Refund Agent", "state": "standby", "note": "Policy published; processor hook Day 3." },
+        { "id": "crm", "name": "CRM Agent", "state": "standby", "note": "Email capture prepared." }
+      ]
+    },
+    {
+      "name": "Commerce",
+      "agents": [
+        { "id": "pricing", "name": "Pricing Agent", "state": "active", "note": "Fixed reasonable prices: $19 / $29 / $49." },
+        { "id": "inventory", "name": "Inventory Agent", "state": "active", "note": "Digital goods, unlimited stock." },
+        { "id": "marketplace", "name": "Marketplace Agent", "state": "active", "note": "This storefront is the first channel." }
+      ]
+    },
+    {
+      "name": "Finance",
+      "agents": [
+        { "id": "treasury", "name": "Treasury Agent", "state": "standby", "note": "Stripe keys optional." },
+        { "id": "ar", "name": "Accounts Receivable Agent", "state": "standby", "note": "Webhook ready when keys exist." }
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "agents": [
+        { "id": "cloud", "name": "Cloud Infrastructure Agent", "state": "active", "note": "Vercel target." },
+        { "id": "cicd", "name": "CI/CD Agent", "state": "active", "note": "Push to main deploys." },
+        { "id": "monitor", "name": "Monitoring Agent", "state": "active", "note": "/api/health exposed." }
+      ]
+    }
+  ]
+}

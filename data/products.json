@@ -1,0 +1,71 @@
+[
+  {
+    "slug": "starter-pack",
+    "name": "Aurora Starter Pack",
+    "priceCents": 1900,
+    "badge": "Most understood",
+    "summary": "A clean landing page kit, product card templates, and the first 12 prompts your store actually uses.",
+    "teaser": "Enough to publish a store people can navigate without a tutorial.",
+    "includes": [
+      "1 landing page HTML kit",
+      "3 product card layouts",
+      "12 operating prompts",
+      "Paywall copy that does not sound like a trap",
+      "30-day update notes from the Content Agent"
+    ],
+    "locked": [
+      "Full HTML/CSS source for the landing kit",
+      "Editable prompt pack with variables marked",
+      "Checkout microcopy set",
+      "Printable one-page SOP for first launch"
+    ],
+    "audience": "First-time operators who want a store that looks finished.",
+    "fulfillment": "digital"
+  },
+  {
+    "slug": "operator-playbook",
+    "name": "Operator Playbook",
+    "priceCents": 4900,
+    "badge": "Best value",
+    "summary": "The working rules for an autonomous store: what agents decide alone, what needs your override, and how money moves.",
+    "teaser": "The difference between a demo and a business that can run overnight.",
+    "includes": [
+      "Decision rights matrix for every agent layer",
+      "Refund and reputation playbooks",
+      "Weekly cash-flow checklist",
+      "Escalation rules in plain English",
+      "Sample event log you can copy"
+    ],
+    "locked": [
+      "Full playbook PDF + Markdown",
+      "Editable decision matrix spreadsheet",
+      "Incident scripts for support, refunds, and outages",
+      "Owner override protocol"
+    ],
+    "audience": "Owners who want the company to run without becoming the operator.",
+    "fulfillment": "digital"
+  },
+  {
+    "slug": "agent-briefs",
+    "name": "Agent Brief Pack",
+    "priceCents": 2900,
+    "badge": "For builders",
+    "summary": "One-page job briefs for Sales, Support, Pricing, Treasury, and Governance — written so a model can follow them.",
+    "teaser": "Give each agent a job description instead of a vague personality.",
+    "includes": [
+      "5 ready briefs + 1 blank template",
+      "Input / output contracts",
+      "KPI definitions",
+      "Handoff phrases between agents",
+      "Forbidden-action list"
+    ],
+    "locked": [
+      "All briefs in Markdown",
+      "JSON schemas for agent I/O",
+      "Example event payloads",
+      "Evaluation rubric for model quality"
+    ],
+    "audience": "Builders wiring the next agent into the mesh.",
+    "fulfillment": "digital"
+  }
+]
