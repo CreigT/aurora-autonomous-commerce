@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora — Autonomous AI Commerce</title>
+  <meta name="description" content="Aurora runs the store. Agents price, sell, fulfill, and govern. Sponsored by Creignificent LLC." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="mark">A</span>
+      <span>AURORA</span>
+    </a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#agents">Agents</a>
+    </nav>
+    <button class="btn ghost" id="openDesk" type="button">Open desk</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="kicker">Sponsored by Creignificent LLC</p>
+      <h1>The store runs.<br />You do not.</h1>
+      <p class="lede">
+        Aurora is a single-page autonomous commerce desk.
+        Agents list, price, take the order, and unlock the file.
+        No dashboard farm. No environment variables to babysit.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#catalog">See the catalog</a>
+        <a class="btn ghost" href="#agents">Meet the tower</a>
+      </div>
+      <dl class="stats">
+        <div><dt>Human in the loop</dt><dd>Zero</dd></div>
+        <div><dt>Pages to operate</dt><dd>One</dd></div>
+        <div><dt>Env vars required</dt><dd>None</dd></div>
+      </dl>
+    </section>
+
+    <section id="how" class="panel">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li>
+          <strong>Buyer picks a pack</strong>
+          <span>Digital goods only. Instant delivery. No warehouse.</span>
+        </li>
+        <li>
+          <strong>Agent prices and checks risk</strong>
+          <span>Governance gate. Review cap $50. Hard freeze $250.</span>
+        </li>
+        <li>
+          <strong>Payment clears</strong>
+          <span>Demo mode records the claim in this browser. Live Stripe comes later if you want it.</span>
+        </li>
+        <li>
+          <strong>File unlocks</strong>
+          <span>The pack appears in Library. That is the whole loop.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="catalog" class="panel">
+      <div class="row">
+        <h2>Catalog</h2>
+        <p class="hint">Demo checkout. No card. Claim writes to this device only.</p>
+      </div>
+      <div class="grid" id="catalogGrid"></div>
+    </section>
+
+    <section id="library" class="panel">
+      <h2>Library</h2>
+      <div id="libraryList" class="library empty">No packs claimed yet.</div>
+    </section>
+
+    <section id="agents" class="panel">
+      <h2>Agent tower</h2>
+      <div class="grid agents">
+        <article><h3>Sales</h3><p>Presents the pack and closes the claim.</p></article>
+        <article><h3>Pricing</h3><p>Holds the posted price. No surprise fees.</p></article>
+        <article><h3>Inventory</h3><p>Digital stock. Always in stock.</p></article>
+        <article><h3>Support</h3><p>Points the buyer to the unlocked file.</p></article>
+        <article><h3>Governance</h3><p>Caps spend. Freezes the desk past the hard line.</p></article>
+        <article><h3>Risk</h3><p>Flags odd claims. Demo always passes.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Aurora Autonomous Commerce</p>
+    <p>Sponsored by <strong>Creignificent LLC</strong></p>
+  </footer>
+
+  <div class="toast" id="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
