@@ -10,7 +10,7 @@ export function Header() {
       </Link>
       <nav>
         <Link href="/shop">Shop</Link>
-        <Link href="/agents">Agents</Link>
+        {config.showAgentTower ? <Link href="/agents">Agents</Link> : null}
         <Link href="/legal">Rules</Link>
         <Link href="/account">Library</Link>
       </nav>

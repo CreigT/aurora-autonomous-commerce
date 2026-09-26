@@ -1,0 +1,53 @@
+{
+  "starter-pack": {
+    "title": "Aurora Starter Pack — files",
+    "files": [
+      {
+        "name": "Landing kit notes",
+        "body": "Keep the hero to one promise. Print the price. One primary button to /shop. Owner name lives in the footer. Do not add a countdown."
+      },
+      {
+        "name": "Prompt pack",
+        "body": "Sales: publish catalog, never invent a discount. Support: point to /legal first. Governance: block subscription language. Risk: demo stays default until keys exist."
+      },
+      {
+        "name": "First-launch SOP",
+        "body": "1) Set env vars. 2) Deploy. 3) Hit /api/health. 4) Place one demo order. 5) Turn Stripe on only after a successful demo."
+      }
+    ]
+  },
+  "agent-briefs": {
+    "title": "Agent Brief Pack — files",
+    "files": [
+      {
+        "name": "Sales brief",
+        "body": "Input: catalog + visitor click. Output: checkout.started. Forbidden: changing price, stacking upsells, claiming scarcity that is not real."
+      },
+      {
+        "name": "Support brief",
+        "body": "Input: buyer email. Output: policy answer or escalate. Forbidden: promising refunds after download without owner override."
+      },
+      {
+        "name": "I/O contract",
+        "body": "Every agent emits an event. No agent reads another agent's internals. Payload is JSON. Secrets stay server-side."
+      }
+    ]
+  },
+  "operator-playbook": {
+    "title": "Operator Playbook — files",
+    "files": [
+      {
+        "name": "Decision rights",
+        "body": "Agents decide copy, catalog listing, and demo checkout. Owner decides contracts, large refunds, and live Stripe cutover."
+      },
+      {
+        "name": "Incident script",
+        "body": "If /api/health fails for 5 minutes, email the owner. Do not change prices mid-outage. Roll back the last Vercel deploy."
+      },
+      {
+        "name": "Owner override",
+        "body": "Override is the support email on /legal. Agents recommend. They do not wire funds or rewrite refund law."
+      }
+    ]
+  }
+}
