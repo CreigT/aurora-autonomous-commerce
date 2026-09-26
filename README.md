@@ -1,48 +1,32 @@
-# Aurora — Autonomous AI Commerce (Day 1)
+# Aurora — Autonomous AI Commerce
 
-A small, finished store you can deploy today.
+A small store you can deploy today. You are the legal owner. You are not the operator.
 
-You are the **legal owner**. You are not the operator.
+## Environment variables
 
-This repository is the customer-facing company: landing page, three products, a reasonable paywall, a library, and a public agent tower. Everything important is a variable in `.env`.
+Copy `.env.example` to `.env.local` (local) or paste into Vercel → Settings → Environment Variables.
 
-## What you do
+Required for identity:
 
-1. Open this repo.
-2. Copy `.env.example` values into Vercel → Settings → Environment Variables.
-3. Change store name, owner name, support email, and site URL.
-4. Import https://github.com/CreigT/aurora-autonomous-commerce in [Vercel](https://vercel.com/new).
-5. Deploy.
+- `NEXT_PUBLIC_STORE_NAME`
+- `NEXT_PUBLIC_STORE_TAGLINE`
+- `NEXT_PUBLIC_STORE_URL` — full public URL (`https://your-app.vercel.app`)
+- `NEXT_PUBLIC_SUPPORT_EMAIL`
+- `NEXT_PUBLIC_OWNER_NAME`
+- `NEXT_PUBLIC_DEMO_MODE` — `true` until Stripe is live
+- `NEXT_PUBLIC_SHOW_AGENT_TOWER` — `true` or `false`
+- `NEXT_PUBLIC_CURRENCY` — `usd`
 
-Optional later: add Stripe keys and set `NEXT_PUBLIC_DEMO_MODE=false`.
+Optional payments:
 
-You do not need to edit React to open a store.
+- `STRIPE_SECRET_KEY`
+- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
+- `STRIPE_WEBHOOK_SECRET`
+- `UNLOCK_EMAILS` — comma-separated tester emails that can claim the library
 
-## Pages
+Live money only runs when `STRIPE_SECRET_KEY` is set **and** `NEXT_PUBLIC_DEMO_MODE=false`.
 
-| URL | Purpose |
-| --- | --- |
-| `/` | Landing page anyone can understand |
-| `/shop` | Three products, printed prices |
-| `/product/[slug]` | Teaser + paywall |
-| `/checkout` | Success / cancel |
-| `/account` | Unlocked library |
-| `/agents` | Read-only agent mesh |
-| `/legal` | Refund and owner rules |
-| `/api/health` | Liveness |
-| `/api/products` | Catalog for other agents |
-| `/api/checkout` | Start payment |
-| `/api/webhook` | Stripe events |
-| `/api/agents/status` | Agent heartbeat |
-| `/api/events` | Recent agent events |
-
-## Prices (on purpose)
-
-- Starter Pack — $19
-- Agent Brief Pack — $29
-- Operator Playbook — $49
-
-No fake scarcity. No subscription trap.
+Stripe webhook endpoint: `https://YOUR-DOMAIN/api/webhook`
 
 ## Local
 
@@ -53,10 +37,22 @@ npm run dev
 ```
 
 Open http://localhost:3000
+Health: http://localhost:3000/api/health
 
-## Demo vs live money
+## Deploy on Vercel
 
-- **Demo (default):** checkout writes an `aurora_unlocks` cookie and sends you to the success page.
-- **Live:** set `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`, and `NEXT_PUBLIC_DEMO_MODE=false`. Webhook path: `/api/webhook`.
+```bash
+git add -A && git commit -m "Ship Aurora storefront" && git push
+```
 
-Full engineering spec: [MODULE.md](./MODULE.md)
+Then: https://vercel.com/new → import this repo → paste env vars → Deploy.
+
+Or:
+
+```bash
+npx vercel --prod
+```
+
+## Deploy on Netlify
+
+Import the same GitHub repo. Build command `npm run build`. Use the official Next.js plugin (`netlify.toml` already points at it). Paste the same env vars.
