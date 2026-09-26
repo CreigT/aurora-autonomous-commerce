@@ -1,8 +1,16 @@
+function safeUrl(raw: string) {
+  try {
+    return new URL(raw).toString().replace(/\/$/, "");
+  } catch {
+    return "http://localhost:3000";
+  }
+}
+
 export const config = {
   storeName: process.env.NEXT_PUBLIC_STORE_NAME || "Aurora",
   tagline:
     process.env.NEXT_PUBLIC_STORE_TAGLINE || "A company that never sleeps.",
-  url: process.env.NEXT_PUBLIC_STORE_URL || "http://localhost:3000",
+  url: safeUrl(process.env.NEXT_PUBLIC_STORE_URL || "http://localhost:3000"),
   supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "owner@example.com",
   ownerName: process.env.NEXT_PUBLIC_OWNER_NAME || "Legal Owner",
   demoMode: (process.env.NEXT_PUBLIC_DEMO_MODE || "true") === "true",
