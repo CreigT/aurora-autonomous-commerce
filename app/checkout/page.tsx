@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { getProduct, formatPrice } from "@/lib/products";
 import { config } from "@/lib/config";
 
@@ -8,7 +9,16 @@ export default function CheckoutPage({
   searchParams: { status?: string; slug?: string; session?: string };
 }) {
   const status = searchParams.status || "idle";
-  const product = searchParams.slug ? getProduct(searchParams.slug) : undefined;
+  const session = searchParams.session;
+  const slug = searchParams.slug || "";
+
+  if (status === "success" && session) {
+    redirect(
+      `/api/checkout/confirm?session=${encodeURIComponent(session)}&slug=${encodeURIComponent(slug)}`
+    );
+  }
+
+  const product = slug ? getProduct(slug) : undefined;
 
   return (
     <main className="section" style={{ borderTop: "none", paddingTop: 48 }}>
